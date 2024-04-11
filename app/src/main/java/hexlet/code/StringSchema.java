@@ -3,28 +3,33 @@ package hexlet.code;
 import java.util.function.Predicate;
 
 public class StringSchema {
-
-    String string;
-    String subString;
+    String str;
     int number;
-    public StringSchema(String string) {
-        this.string = string;
+    String subString;
+
+    Predicate<String> required = s -> s.equals("") && s.equals(null);
+    Predicate<String> contains = s -> s.contains(subString);
+    Predicate<Integer> minLength = n -> str.length() >= number;
+
+
+    public boolean required() {
+    return required.test(str);
     }
 
-    public String required() {
-        Predicate<String> req = s -> s.equals("") && s.equals(null);
-        return string;
+    public boolean contains(String subString) {
+    return contains.test(subString);
     }
-    public String contains(String subString) {
-        Predicate<String> con = s -> s.contains(subString);
-        return subString;
-    }
-    public int minLength(int number) {
-        Predicate<Integer> min = n -> string.length() >= number;
-        return number;
+
+    public boolean minLength(int number) {
+        return minLength.test(number);
     }
     public boolean isValid(String str) {
-
-
+        if (required.test(str)) {
+            return true;
+        } else if (contains.test(str)) {
+            return true;
+        } else if (minLength.test(number)) {
+            return true;
+        } return false;
     }
 }
