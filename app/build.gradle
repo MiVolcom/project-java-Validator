@@ -18,10 +18,6 @@ dependencies {
     compileOnly 'org.projectlombok:lombok-maven-plugin:1.18.20.0'
 }
 
-application {
-    mainClass = 'hexlet.code.App'
-}
-
 test {
     finalizedBy jacocoTestReport
     useJUnitPlatform()
