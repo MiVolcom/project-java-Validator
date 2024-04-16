@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.Map;
 
-public class MapSchema<T> extends BaseSchema {
+public final class MapSchema<T> extends BaseSchema {
     public MapSchema<T> required() {
         addPredicate("required", n -> n instanceof Map<?, ?> && n != null);
         required = true;

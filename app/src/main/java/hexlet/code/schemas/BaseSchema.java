@@ -7,8 +7,8 @@ import java.util.function.Predicate;
 public class BaseSchema<T> {
 
     protected boolean required;
-    Map<String, Predicate<T>> predicates = new LinkedHashMap();
-    public boolean isValid(T value) {
+    protected Map<String, Predicate<T>> predicates = new LinkedHashMap();
+    public final boolean isValid(T value) {
         if (value == null || value == "") {
             return !required;
         }
@@ -19,7 +19,7 @@ public class BaseSchema<T> {
         }
         return true;
     }
-    public void addPredicate(String name, Predicate<T> predicate) {
+    public final void addPredicate(String name, Predicate<T> predicate) {
         predicates.put(name, predicate);
     }
 }

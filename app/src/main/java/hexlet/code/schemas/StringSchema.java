@@ -1,6 +1,6 @@
 package hexlet.code.schemas;
 
-public class StringSchema<T> extends BaseSchema {
+public final class StringSchema<T> extends BaseSchema {
 
     public StringSchema<T> required() {
         addPredicate("required", s -> s instanceof String && !s.equals("") && s != null);
