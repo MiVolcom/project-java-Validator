@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.schemas;
 
 public class NumberSchema<T> extends BaseSchema {
     public NumberSchema<T> required() {
