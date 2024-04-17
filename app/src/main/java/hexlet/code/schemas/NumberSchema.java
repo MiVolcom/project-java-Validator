@@ -7,7 +7,7 @@ public final class NumberSchema<T> extends BaseSchema {
         return this;
     }
     public NumberSchema<T> positive() {
-        addPredicate("positive", n -> n instanceof Integer && ((Integer) n).intValue() > 0);
+        addPredicate("positive", n -> ((Integer) n).intValue() > 0);
         return this;
     }
     public NumberSchema<T> range(int min, int max) {
